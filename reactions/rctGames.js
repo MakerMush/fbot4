@@ -12,11 +12,11 @@ module.exports = {
         "mw": "modernwarfare"
     };
 
-    const game = Object.entries(games).find(([key, value]) => message.content.includes(key));
-    if (game) {
-        const emoji = client.emojis.cache.find(emoji => emoji.name === game[1]);
-        if (emoji) {
-            message.react(emoji);
+    for (let [key, value] of Object.entries(games)) {
+        const regex = new RegExp(`^${key}\\b|\\b${key}\\b|\\b${key}$`, 'i');
+        if (regex.test(message.content)) {
+            message.react(client.emojis.cache.find(emoji => emoji.name === value));
+            break;
         }
     }
   }

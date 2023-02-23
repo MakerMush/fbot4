@@ -7,16 +7,17 @@ module.exports = {
     // if it's not from him, return
     if (!message.author.id == "1026599284075921419") {
       return;
-    }
+    } else {
     // if it's in The Channel, fire away
-    if (message.channel.id == "1066783260023205928") {
+    if (message.channel.id == "1066783260023205928" && message.author.id == "1026599284075921419") {
       message.react("😐");
     } else {
-      if ((Math.floor(Math.random() * 10)==0)){
+      if (message.author.id == "1026599284075921419" && (Math.floor(Math.random() * 10)==0)){
         message.react("😐");
       }
     }
-  }
+  } 
+}
 };
 
 /*
