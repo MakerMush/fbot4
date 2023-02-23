@@ -5,14 +5,11 @@ module.exports = {
   name: 'tw',
   execute: (client, message) => {
     // if it's not from him, return
-    if (!message.author.id == "1026599284075921419") {
-      return;
-    }
     // if it's in The Channel, fire away
     if (message.channel.id == "1066783260023205928") {
       message.react("😐");
     } else {
-      if ((Math.floor(Math.random() * 10)==0)){
+      if (message.author.id == "1026599284075921419" && (Math.floor(Math.random() * 10)==0)){
         message.react("😐");
       }
     }

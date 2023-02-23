@@ -1,7 +1,7 @@
 const { MessageReaction } = require('discord.js');
 
 module.exports = {
-    name: 'f',
+    name: 'happy',
   execute: (client, message) => {
     if (!message.content.toLowerCase().includes("happy")){
         return;
